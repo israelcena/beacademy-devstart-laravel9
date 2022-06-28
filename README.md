@@ -2,11 +2,14 @@
 Esse repositório contem o código fonte do projeto trilha sprint 9 do curso de Laravel MVC.
 
 ## Como iniciar o projeto com Laravel
-Primeiramente você deve instalar o docker em seu computador para poder gerar os containers.
+Pressupondo que você já possui o docker em seu computador, execute o comando no bash(MacOS, Linux ou WSL2):
 
 ```bash
 ./vendor/bin/sail up
 ```
+
+Após a execução do comando, você poderá acessar o projeto no navegador no endereço:
+http://localhost/
 
 ## Verbos HTTP
 Foram criados os verbos HTTP 
