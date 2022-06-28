@@ -20,3 +20,8 @@ Foram criados os verbos HTTP
 - OPTIONS,
 - TRACE,
 - PATCH.
+
+## ViaCep
+Foi utilizada a API do via cep para criação de rotas para buscar endereços.
+
+- [Via Cep Controller](./app/Http/Controllers/ViaCepController.php)
