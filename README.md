@@ -32,6 +32,6 @@ Foram criados os verbos HTTP
 ## ViaCep
 Foi utilizada a API do via cep para criação de rotas para buscar endereços.
 
-- Rota local para acessar: http://localhost/viacep
+- Endpoint para acessar: http://localhost/viacep
 
 - [Via Cep Controller](./app/Http/Controllers/ViaCepController.php)
