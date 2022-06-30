@@ -5,6 +5,11 @@ Esse repositório contem o código fonte da sprint 9 do curso Devstart da Beacad
 Pressupondo que você já possui o docker em seu computador, execute o comando no bash(MacOS, Linux ou WSL2):
 
 ```bash
+composer install
+```
+Após a instalação dos pacotes, execute:
+
+```bash
 ./vendor/bin/sail up
 ```
 
