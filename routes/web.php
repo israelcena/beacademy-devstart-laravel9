@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ViaCepController;
+use App\Http\Controllers\WeatherController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(ViaCepController::class)->group(function () {
@@ -12,3 +13,5 @@ Route::controller(ViaCepController::class)->group(function () {
     Route::post('/viacep', 'index')->name('viacep.post');
     Route::get('/viacep/{cep}', 'show')->name('viacep.show');
 });
+
+Route::get('/weather', [WeatherController::class, 'index'])->name('weather.index');
