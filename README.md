@@ -2,15 +2,38 @@
 Esse repositório contem o código fonte da sprint 9 do curso Devstart da Beacademy na trilha de Laravel MVC.
 
 ## Como iniciar o projeto com Laravel
-Pressupondo que você já possui o docker em seu computador, execute o comando no bash(MacOS, Linux ou WSL2):
+Pressupondo que você já possui o docker em seu computador use o bash (MacOS, Linux ou WSL2):
 
+### Local
+
+- Instalando os pacotes localmente
 ```bash
 composer install
 ```
-Após a instalação dos pacotes, execute:
+
+- Após a instalação dos pacotes, para gerar os containers, execute:
 
 ```bash
 ./vendor/bin/sail up
+
+```
+
+- Entre no bash do container do php
+```bash
+docker exec -it (nomedocontainergerado) bash # Troque (nomedocontainergerado) pelo nome do container no php
+
+```
+
+- ### Quando estiver no bash do container do php
+
+- Executando as migrations
+```bash
+php artisan migrate
+```
+
+- Executando os seeders para popular o db
+```bash
+php artisan db:seed
 ```
 
 Após a execução do comando, você poderá acessar o projeto no navegador no endereço:
