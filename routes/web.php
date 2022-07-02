@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ViaCepController;
 use App\Http\Controllers\WeatherController;
 use Illuminate\Support\Facades\Route;
@@ -15,3 +16,7 @@ Route::controller(ViaCepController::class)->group(function () {
 });
 
 Route::get('/weather', [WeatherController::class, 'index'])->name('weather.index');
+
+Route::controller(UserController::class)->group(function () {
+    Route::get('/usuarios', 'index')->name('users.index');
+});
