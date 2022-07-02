@@ -8,6 +8,6 @@ class WeatherController extends Controller
 {
     public function index()
     {
-        dd("Hello World");
+        return view('weather.index');
     }
 }
