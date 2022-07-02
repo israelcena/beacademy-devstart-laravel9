@@ -8,5 +8,6 @@
 </head>
 <body>
   <h1>Hello Wheather App</h1>
+  {{ $weatherRequest }}
 </body>
 </html>
