@@ -27,4 +27,20 @@ class UserController extends Controller
         }
         return view('users.show', compact('user'));
     }
+
+    public function create()
+    {
+        return view('users.create');
+    }
+
+    public function store(Request $req)
+    {
+        $user = new User;
+        $user->name = $req->name;
+        $user->email = $req->email;
+        $user->password = $req->password;
+        $user->save();
+
+        return redirect()->route('users.index');
+    }
 }
