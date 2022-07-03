@@ -38,7 +38,7 @@ class UserController extends Controller
         $user = new User;
         $user->name = $req->name;
         $user->email = $req->email;
-        $user->password = $req->password;
+        $user->password = bcrypt($req->password);
         $user->save();
 
         return redirect()->route('users.index');
