@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Not Found</title>
-</head>
-<body>
-  <div>
+@extends('template.users')
+@section('title', 'Usuário Não Encontrado')
+@section('body')
+  <div class="container">
     <p>Usuário não encontrado</p>
-    <a href="{{ route('users.index') }}">Voltar para index</a>
+    <a class="btn btn-info text-white" href="{{ route('users.index') }}">Voltar para index</a>
   </div>
-</body>
-</html>
