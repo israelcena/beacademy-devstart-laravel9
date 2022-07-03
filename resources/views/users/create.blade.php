@@ -1,7 +1,9 @@
 @extends('template.users')
 @section('title', 'Criar Usuário')
 @section('body')
-<form class="row g-3 needs-validation" method="post" action="{{route('users.store')}}">
+
+<div class="container">  
+  <form class="row g-3 needs-validation" method="post" action="{{route('users.store')}}">
   @csrf
   <div class="col-md-12">
     <label for="name" class="form-label">Nome</label>
@@ -41,3 +43,4 @@
     <button class="btn btn-primary" type="submit">Cadastrar</button>
   </div>
 </form>
+</div>
