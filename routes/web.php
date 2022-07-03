@@ -20,5 +20,6 @@ Route::get('/weather', [WeatherController::class, 'index'])->name('weather.index
 Route::controller(UserController::class)->group(function () {
     Route::get('/usuarios', 'index')->name('users.index');
     Route::get('/usuarios/criar', 'create')->name('users.create');
+    Route::post('usuarios', 'store')->name('users.store');
     Route::get('/usuarios/{id}', 'show')->name('users.show');
 });
