@@ -16,13 +16,15 @@ class UserController extends Controller
 
     public function show(int $id)
     {
+        $user = User::find($id);
+        // Modos de retornar apenas um usuário
         // return User::where('id', $id)->first();
-        // return User::findOrFail($id);
+        // return User::findOrFail($id); // retorna ou falha
         // return User::find($id);
 
-        if (!User::find($id)) {
+        if (!$user) {
             return view('users.notFoundUser');
         }
-        return User::find($id);
+        return view('users.show', compact('user'));
     }
 }
