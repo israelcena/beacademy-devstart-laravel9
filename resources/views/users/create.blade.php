@@ -7,14 +7,14 @@
   @csrf
   <div class="col-md-12">
     <label for="name" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="name" name="name" value="Mark" required>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Mark" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-12">
     <label for="password" class="form-label">Senha</label>
-    <input type="password" class="form-control" id="password" name="password" value="Otto" required>
+    <input type="password" class="form-control" id="password" name="password" required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -22,7 +22,7 @@
   <div class="col-md-12">
     <label for="email" class="form-label">E-mail</label>
     <div class="input-group">
-      <input type="email" class="form-control" id="email" name="email" aria-describedby="email" required>
+      <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com.br" aria-describedby="email" required>
       <div class="invalid-feedback">
        Por Favor coloque um email válido.
       </div>
@@ -30,7 +30,7 @@
   </div>
   <div class="col-12">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <input class="form-check-input" type="checkbox" id="invalidCheck" required>
       <label class="form-check-label" for="invalidCheck">
         Eu aceito com os termos e condições
       </label>
