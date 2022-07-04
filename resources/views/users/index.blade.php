@@ -19,7 +19,13 @@
           <td>{{ $user->name }}</td>
           <td>{{ $user->email }}</td>
           <td>{{ date('d/m/Y - H:i', strtotime($user->created_at)) }}</td>
-          <td><div class="btn-group"><a href="{{ route('users.show', $user->id) }}" class="btn btn-primary btn-sm">Visualisar</a><a class="btn btn-warning btn-sm">Editar</a><a class="btn btn-danger btn-sm">Excluir</a></div></td>
+          <td>
+            <div class="btn-group">
+              <a href="{{ route('users.show', $user->id) }}" class="btn btn-primary btn-sm">Visualisar</a>
+              <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning btn-sm">Editar</a>
+              {{-- <a href="{{ route('users.delete', $user->id) }}" class="btn btn-danger btn-sm">Excluir</a> --}}
+            </div>
+          </td>
         </tr>
       @endforeach
        </tbody>
