@@ -2,19 +2,28 @@
 @section('title', 'Criar Usuário')
 @section('body')
 
-<div class="container">  
+<div class="container">
+
+  @if($errors->any())  
+    @foreach($errors->all() as $error)
+    <div class="alert alert-danger fade show" role="alert">
+    Erro: <strong>{{ $error }}</strong>
+    </div>
+    @endforeach
+  @endif
+
   <form class="row g-3 needs-validation" method="post" action="{{route('users.store')}}">
   @csrf
   <div class="col-md-12">
     <label for="name" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="Mark" required>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Mark">
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-12">
     <label for="password" class="form-label">Senha</label>
-    <input type="password" class="form-control" id="password" name="password" required>
+    <input type="password" class="form-control" id="password" name="password">
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -22,7 +31,7 @@
   <div class="col-md-12">
     <label for="email" class="form-label">E-mail</label>
     <div class="input-group">
-      <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com.br" aria-describedby="email" required>
+      <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com.br" aria-describedby="email">
       <div class="invalid-feedback">
        Por Favor coloque um email válido.
       </div>
