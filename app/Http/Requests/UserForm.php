@@ -24,7 +24,7 @@ class UserForm extends FormRequest
     public function rules()
     {
         $id = $this->id ?? "";
-        return [
+        $rules = [
             "name" => "required|string|max:50|min:3",
             "email" => [
                 "required",
@@ -33,5 +33,11 @@ class UserForm extends FormRequest
             ],
             "password" => "required|max:14|min:4"
         ];
+
+        if ($this->method('PUT')) {
+            $rules['password'] = "nullable|max:14|min:4";
+        }
+
+        return $rules;
     }
 }
