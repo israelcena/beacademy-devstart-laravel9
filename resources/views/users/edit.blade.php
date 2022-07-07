@@ -2,6 +2,13 @@
 @section('title', "Editar Usuário {{ $user->name }}" )
 @section('body')
 <div class="container">  
+  @if($errors->any())  
+    @foreach($errors->all() as $error)
+    <div class="alert alert-danger fade show" role="alert">
+    Erro: <strong>{{ $error }}</strong>
+    </div>
+    @endforeach
+  @endif
   <form class="row g-3 needs-validation" method="POST" action="{{route('users.update', $user->id)}}">
   @method('PUT')
   @csrf
