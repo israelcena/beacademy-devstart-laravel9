@@ -37,6 +37,12 @@
       </div>
     </div>
   </div>
+  <div class="col-md-12">
+    <label for="image" class="form-label">Foto: </label>
+    <div class="input-group">
+      <input type="file" class="form-control" id="image" name="image" aria-describedby="photo">
+    </div>
+  </div>
   <div class="col-12">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" id="invalidCheck" required>
