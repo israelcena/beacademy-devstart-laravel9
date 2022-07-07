@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Http\Requests\UserForm;
 
 class UserController extends Controller
 {
@@ -14,7 +14,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::all();
+        $users = $this->model::all();
 
         return view('users.index', compact('users'));
     }
@@ -38,7 +38,7 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function store(Request $req)
+    public function store(UserForm $req)
     {
         // $user = new User;
         // $user->name = $req->name;
@@ -62,7 +62,7 @@ class UserController extends Controller
         return view('users.edit', compact('user'));
     }
 
-    public function update(Request $req, $id)
+    public function update(UserForm $req, $id)
     {
         $user = $this->model->find($id);
         if (!$user) {
