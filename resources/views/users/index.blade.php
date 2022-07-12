@@ -6,6 +6,7 @@
       <thead class="table-dark">
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Foto</th>
       <th scope="col">Nome</th>
       <th scope="col">E-mail</th>
       <th scope="col">Criado em</th>
@@ -16,6 +17,7 @@
         @foreach($users as $user)
         <tr>
           <th scope="row">{{ $user->id }}</td>
+          <td><img width="50px" class="rounded-circle" src="{{ asset("/storage/$user->image") }}" alt="{{ $user->name }}" /></td>
           <td>{{ $user->name }}</td>
           <td>{{ $user->email }}</td>
           <td>{{ date('d/m/Y - H:i', strtotime($user->created_at)) }}</td>
