@@ -14,7 +14,8 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = $this->model::all();
+        // $users = $this->model::all();
+        $users = $this->model::paginate(5);
 
         return view('users.index', compact('users'));
     }
