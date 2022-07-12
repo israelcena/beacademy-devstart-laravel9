@@ -20,6 +20,7 @@
                   <ul class="navbar-nav">
                       <li class="nav-item"><a class="nav-link {{ request()->routeIs('users.index') ? 'active' : '' }}" aria-current="page" href="/usuarios">Home</a></li>
                       <li class="nav-item"><a class="nav-link {{ request()->routeIs('users.create') ? 'active' : '' }}" aria-current="page" href="/usuarios/criar">Criar Usuários</a></li>
+                      <li class="nav-item"><a class="nav-link {{ request()->routeIs('posts.index') ? 'active' : '' }}" aria-current="page" href="/posts">Todos os posts</a></li>
                   </ul>
               </div>
           </div>
