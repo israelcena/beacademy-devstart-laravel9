@@ -20,8 +20,8 @@
         <td>{{ $post->title}}</td>
         <td>{{ $post->post}}</td>
         <td>{{ ($post->active) ? "Sim" : "Não" }}</td>
-        <td>{{ $post->created_at}}</td>
-        <td>{{ $post->updated_at}}</td>
+        <td>{{ date( 'd/m/Y - H:i:s', strtotime($post->created_at))}}</td>
+        <td>{{ date( 'd/m/Y - H:i:s', strtotime($post->updated_at))}}</td>
       </tr>
       @endforeach
     </tbody>
