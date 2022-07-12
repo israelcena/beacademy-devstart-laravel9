@@ -25,13 +25,19 @@ class PostController extends Controller
     ) {
     }
 
-    public function index($userId)
+    public function index()
+    {
+        $posts = $this->post->paginate(10);
+        return view('posts.index', compact('posts'));
+    }
+
+    public function showOne($userId)
     {
         $user = $this->user->find($userId);
         if (!$user) {
             return view('posts.notfound');
         }
         $posts = $user->posts()->paginate(5);
-        return view('posts.index', compact('posts'));
+        return view('posts.showOne', compact('posts'));
     }
 }

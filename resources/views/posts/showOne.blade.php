@@ -7,19 +7,21 @@
   <table class="table table-dark table-striped">
     <thead>
       <th scope="col">#</th>
-      <th scope="col">Usuário</th>
       <th scope="col">Título do post</th>
       <th scope="col">Post</th>
       <th scope="col">Ativo</th>
+      <th scope="col">Criado em</th>
+      <th scope="col">Atualizado em</th>
     </thead>
     <tbody>
       @foreach ($posts as $post)
       <tr>
         <th scope="row">{{ $post->id}}</th>
-        <td>{{ $post->user->name }}</td>
         <td>{{ $post->title}}</td>
         <td>{{ $post->post}}</td>
         <td>{{ ($post->active) ? "Sim" : "Não" }}</td>
+        <td>{{ $post->created_at}}</td>
+        <td>{{ $post->updated_at}}</td>
       </tr>
       @endforeach
     </tbody>

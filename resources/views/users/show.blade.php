@@ -12,7 +12,7 @@
       <a class="btn btn-warning text-black" href="{{ route('users.edit', $user->id) }}">Editar</a>
       <a class="btn btn-primary text-white" href="{{ route('users.index') }}">Voltar</a>
       <button class="btn btn-danger text-white" type="submit">Excluir</button>
-      <a class="btn btn-info" href="{{ route('posts.index', $user->id) }}">Visualizar Posts</a>
+      <a class="btn btn-info" href="{{ route('posts.showOne', $user->id) }}">Visualizar Posts</a>
     </form>
   </div>
   @endsection
