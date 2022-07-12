@@ -11,7 +11,7 @@
     @endforeach
   @endif
 
-  <form class="row g-3 needs-validation" method="post" action="{{route('users.store')}}">
+  <form class="row g-3 needs-validation" method="post" action="{{route('users.store')}}" enctype="multipart/form-data">
   @csrf
   <div class="col-md-12">
     <label for="name" class="form-label">Nome</label>

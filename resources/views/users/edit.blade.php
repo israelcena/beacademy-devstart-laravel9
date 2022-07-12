@@ -9,7 +9,7 @@
     </div>
     @endforeach
   @endif
-  <form class="row g-3 needs-validation" method="POST" action="{{route('users.update', $user->id)}}">
+  <form class="row g-3" method="POST" action="{{route('users.update', $user->id)}}" enctype="multipart/form-data">
   @method('PUT')
   @csrf
   <div class="col-md-12">
