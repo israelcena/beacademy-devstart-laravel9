@@ -31,8 +31,8 @@ class UserForm extends FormRequest
                 "email",
                 "unique:users,email,{$id},id"
             ],
+            "image" => ["file"],
             "password" => "required|max:14|min:4",
-            "image" => ["file"]
         ];
 
         if ($this->method('PUT')) {
