@@ -9,6 +9,7 @@
       <th scope="col">Foto</th>
       <th scope="col">Nome</th>
       <th scope="col">E-mail</th>
+      <th scope="col">Qtd de Posts</th>
       <th scope="col">Criado em</th>
       <th scope="col">Ações</th>
     </tr>
@@ -26,6 +27,7 @@
           </td>
           <td>{{ $user->name }}</td>
           <td>{{ $user->email }}</td>
+          <td>{{ $user->posts->count() }}</td>
           <td>{{ date('d/m/Y - H:i', strtotime($user->created_at)) }}</td>
           <td>
             <div class="btn-group">
