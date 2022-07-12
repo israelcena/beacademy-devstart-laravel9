@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ViaCepController;
 use App\Http\Controllers\WeatherController;
@@ -25,6 +26,10 @@ Route::controller(UserController::class)->group(function () {
     Route::delete('/usuarios/{id}', 'destroy')->name('users.destroy');
     Route::put('/usuarios/{id}', 'update')->name('users.update');
     Route::get('/usuarios/{id}', 'show')->name('users.show');
+});
+
+Route::controller(PostController::class)->group(function () {
+    Route::get('/posts', 'index')->name('posts.index');
 });
 
 Route::get("/healthcheck", [UserController::class, 'healthcheck'])->name('health.check');
