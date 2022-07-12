@@ -11,7 +11,7 @@
 <body>
       <nav class="navbar navbar-expand-sm navbar-light bg-info">
           <div class="container">
-              <a class="navbar-brand" href="#">Cadastro de Usuários</a>
+              <a class="navbar-brand" href="#">Cadastro de Usuário</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
                   aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
