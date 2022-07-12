@@ -31,7 +31,7 @@ class PostController extends Controller
         if (!$user) {
             return view('posts.notfound');
         }
-        $posts = $user->posts()->get();
+        $posts = $user->posts()->paginate(5);
         return view('posts.index', compact('posts'));
     }
 }

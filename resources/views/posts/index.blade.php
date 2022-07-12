@@ -3,6 +3,7 @@
 @section('body')
 <div class="container mt-4">
   <h2>Listagem de posts do usuário</h2>
+  {{ $posts->links('pagination::bootstrap-5') }}
   <table class="table table-dark table-striped">
     <thead>
       <th scope="col">#</th>
@@ -25,6 +26,9 @@
       @endforeach
     </tbody>
   </table>
+  <div class="justify-content-center pagination">
+  {{ $posts->links('pagination::bootstrap-4') }}
+  </div>
 </div>
 
 @endsection
