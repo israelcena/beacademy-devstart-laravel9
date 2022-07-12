@@ -17,7 +17,13 @@
         @foreach($users as $user)
         <tr>
           <th scope="row">{{ $user->id }}</td>
-          <td><img width="50px" class="rounded-circle" src="{{ asset("/storage/$user->image") }}" alt="{{ $user->name }}" /></td>
+          <td>
+            @if($user->image)
+            <img width="50px" class="rounded-circle" src="{{ asset("/storage/$user->image") }}" alt="{{ $user->name }}" />
+            @else
+            <img width="50px" class="rounded-circle" src="{{ asset("/storage/profile/usuario.jpg") }}" alt="{{ $user->name }}" />
+            @endif
+          </td>
           <td>{{ $user->name }}</td>
           <td>{{ $user->email }}</td>
           <td>{{ date('d/m/Y - H:i', strtotime($user->created_at)) }}</td>
