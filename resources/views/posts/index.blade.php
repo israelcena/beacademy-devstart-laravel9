@@ -2,7 +2,7 @@
 @section('title', 'Posts do usuário')
 @section('body')
 <div class="container mt-4">
-  <h2>Listagem de posts do usuário</h2>
+  <h2 class="h2">Listagem todos os posts</h2>
   {{ $posts->links('pagination::bootstrap-5') }}
   <table class="table table-dark table-striped">
     <thead>
