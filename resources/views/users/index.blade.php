@@ -1,8 +1,8 @@
 @extends('template.users')
 @section('title', 'Listagem dos Usuários')
 @section('body')
-    <h1>Listagem de Usuários</h1>
-    <table class="table">
+    <h1 class="mt-4">Listagem de Usuários</h1>
+    <table class="table table-striped mt-4">
       <thead class="table-dark">
     <tr>
       <th scope="col">#</th>
