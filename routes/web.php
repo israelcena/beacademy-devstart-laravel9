@@ -26,3 +26,5 @@ Route::controller(UserController::class)->group(function () {
     Route::put('/usuarios/{id}', 'update')->name('users.update');
     Route::get('/usuarios/{id}', 'show')->name('users.show');
 });
+
+Route::get("/healthcheck", [UserController::class, 'healthcheck'])->name('health.check');
