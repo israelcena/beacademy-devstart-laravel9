@@ -22,10 +22,10 @@ class UserController extends Controller
     public function show(int $id)
     {
         $user = User::find($id);
-//         Modos de retornar apenas um usuário
-//         return User::where('id', $id)->first();
-//         return User::findOrFail($id); // retorna ou falha
-//         return User::find($id);
+        //         Modos de retornar apenas um usuário
+        //         return User::where('id', $id)->first();
+        //         return User::findOrFail($id); // retorna ou falha
+        //         return User::find($id);
 
         if (!$user) {
             return view('users.notFoundUser');
@@ -48,6 +48,8 @@ class UserController extends Controller
 
         $data = $req->all();
         $data['password'] = bcrypt($req->password);
+        $data['image'] = $req['image'];
+        $data['image']->store('profile', 'public');
         $this->model->create($data);
 
         return redirect()->route('users.index');
@@ -87,6 +89,6 @@ class UserController extends Controller
     }
     public function healthCheck(): string
     {
-      return "Health Check!";
+        return "Health Check!";
     }
 }
