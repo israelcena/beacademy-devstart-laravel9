@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             AddressSeeder::class,
             PostSeeder::class,
-            TeamSeeder::class
+            TeamSeeder::class,
+            TeamUserSeeder::class
         ]);
     }
 }
