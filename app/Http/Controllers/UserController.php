@@ -31,6 +31,9 @@ class UserController extends Controller
         if (!$user) {
             return view('users.notFoundUser');
         }
+
+        $teams = $user->load('teams');
+
         return view('users.show', compact('user'));
     }
 
