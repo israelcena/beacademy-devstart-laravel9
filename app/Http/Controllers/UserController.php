@@ -22,7 +22,7 @@ class UserController extends Controller
 
     public function show(int $id)
     {
-        $user = User::find($id);
+        $user = User::findOrFail($id);
         //         Modos de retornar apenas um usuário
         //         return User::where('id', $id)->first();
         //         return User::findOrFail($id); // retorna ou falha
@@ -82,6 +82,7 @@ class UserController extends Controller
         $user->update($data);
         return redirect()->route('users.show', $user->id);
     }
+
     public function destroy($id): string
     {
         $user = $this->model->find($id);
@@ -91,6 +92,7 @@ class UserController extends Controller
         $user->delete();
         return redirect()->route('users.index');
     }
+
     public function healthCheck(): string
     {
         return "Health Check!";
