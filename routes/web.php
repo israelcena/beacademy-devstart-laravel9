@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ViaCepController;
 use App\Http\Controllers\WeatherController;
@@ -34,3 +35,5 @@ Route::controller(PostController::class)->group(function () {
     Route::get('/posts', 'index')->name('posts.index');
     Route::get('/posts/{userId}', 'showOne')->name('posts.showOne');
 });
+
+Route::get('/times', [TeamController::class, 'index']);
