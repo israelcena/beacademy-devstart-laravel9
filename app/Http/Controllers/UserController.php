@@ -32,7 +32,7 @@ class UserController extends Controller
             return view('users.notFoundUser');
         }
 
-        $teams = $user->load('teams');
+        $user->load('teams');
 
         return view('users.show', compact('user'));
     }
