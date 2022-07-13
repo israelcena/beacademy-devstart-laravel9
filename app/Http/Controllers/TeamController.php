@@ -14,7 +14,8 @@ class TeamController extends Controller
 
     public function index()
     {
-        $TeamsAndUsers = $this->user->load('teams');
-        dd($TeamsAndUsers);
+        $TeamsAndUsers = $this->team->load('users');
+
+        return view('teams.index', compact('TeamsAndUsers'));
     }
 }
