@@ -35,4 +35,4 @@ Route::get('/times', [TeamController::class, 'index'])->name('teams.index');
 
 Route::get('/weather', [WeatherController::class, 'index'])->name('weather.index');
 
-Route::get("/healthcheck", [UserController::class, 'healthcheck'])->name('health.check');
+Route::get("/health-check", [HealthCheck::class, 'healthCheck'])->name('health.check');

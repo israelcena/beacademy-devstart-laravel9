@@ -96,8 +96,4 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
-    public function healthCheck(): string
-    {
-        return "Health Check!";
-    }
 }
