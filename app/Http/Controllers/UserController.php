@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Http\Requests\UserForm;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -96,4 +97,12 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
+    public function search(Request $request)
+    {
+        $users = $this->model->searchUsers(
+            $request->search ?? ''
+        )->paginate(8);
+
+        return view('users.search', compact('users'));
+    }
 }
