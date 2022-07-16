@@ -9,7 +9,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">  
 </head>
 <body>
-      <nav class="navbar navbar-expand-sm navbar-light bg-info">
+      <nav class="navbar navbar-expand-sm navbar-light bg-light">
           <div class="container">
               <a class="navbar-brand" href="{{route('users.index')}}">Cadastro de Usuário</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
@@ -17,13 +17,17 @@
                   <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarID">
-                  <ul class="navbar-nav">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item"><a class="nav-link {{ request()->routeIs('users.index') ? 'active' : '' }}" aria-current="page" href="{{route('users.index')}}">Home</a></li>
                       <li class="nav-item"><a class="nav-link {{ request()->routeIs('users.create') ? 'active' : '' }}" aria-current="page" href="{{route('users.create')}}">Criar Usuários</a></li>
                       <li class="nav-item"><a class="nav-link {{ request()->routeIs('posts.index') ? 'active' : '' }}" aria-current="page" href="{{route('posts.index')}}">Todos os posts</a></li>
                       <li class="nav-item"><a class="nav-link {{ request()->routeIs('teams.index') ? 'active' : '' }}" aria-current="page" href="{{route('teams.index')}}">Todos os Times</a></li>
                   </ul>
-              </div>
+                  <form class="d-flex" action="{{ route('users.search') }}" method="GET">
+                    <input class="form-control me-2" type="search" placeholder="Ex: Marcos" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+                </div>
           </div>
       </nav>
       <div class="container">
