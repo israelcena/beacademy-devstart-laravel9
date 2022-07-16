@@ -24,7 +24,7 @@
                       <li class="nav-item"><a class="nav-link {{ request()->routeIs('teams.index') ? 'active' : '' }}" aria-current="page" href="{{route('teams.index')}}">Todos os Times</a></li>
                   </ul>
                   <form class="d-flex" action="{{ route('users.search') }}" method="GET">
-                    <input class="form-control me-2" type="search" placeholder="Ex: Marcos" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="Ex: Marcos" aria-label="Search" name='search'>
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
                 </div>
