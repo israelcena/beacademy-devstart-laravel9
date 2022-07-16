@@ -14,6 +14,7 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/', 'index')->name('users.index');
     Route::post('usuarios', 'store')->name('users.store');
     Route::get('/usuarios/criar', 'create')->name('users.create');
+    Route::get('/usuarios/search', 'search')->name('users.search');
     Route::get('/usuarios/{userEditId}/editar', 'edit')->name('users.edit');
     Route::delete('/usuarios/{id}', 'destroy')->name('users.destroy');
     Route::put('/usuarios/{id}', 'update')->name('users.update');
