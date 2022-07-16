@@ -10,10 +10,6 @@ use Illuminate\Support\Facades\Route;
 Route::get("/healthcheck", [UserController::class, 'healthcheck'])->name('health.check');
 
 Route::controller(ViaCepController::class)->group(function () {
-    Route::get('/', function () {
-        return view('welcome');
-    })->name('index-route');
-
     Route::get('/viacep', 'index')->name('viacep.index');
     Route::post('/viacep', 'index')->name('viacep.post');
     Route::get('/viacep/{cep}', 'show')->name('viacep.show');
@@ -22,7 +18,7 @@ Route::controller(ViaCepController::class)->group(function () {
 Route::get('/weather', [WeatherController::class, 'index'])->name('weather.index');
 
 Route::controller(UserController::class)->group(function () {
-    Route::get('/usuarios', 'index')->name('users.index');
+    Route::get('/', 'index')->name('users.index');
     Route::post('usuarios', 'store')->name('users.store');
     Route::get('/usuarios/criar', 'create')->name('users.create');
     Route::get('/usuarios/{userEditId}/editar', 'edit')->name('users.edit');
