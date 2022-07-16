@@ -11,17 +11,17 @@
 <body>
       <nav class="navbar navbar-expand-sm navbar-light bg-info">
           <div class="container">
-              <a class="navbar-brand" href="#">Cadastro de Usuário</a>
+              <a class="navbar-brand" href="{{route('users.index')}}">Cadastro de Usuário</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
                   aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarID">
                   <ul class="navbar-nav">
-                      <li class="nav-item"><a class="nav-link {{ request()->routeIs('users.index') ? 'active' : '' }}" aria-current="page" href="/usuarios">Home</a></li>
-                      <li class="nav-item"><a class="nav-link {{ request()->routeIs('users.create') ? 'active' : '' }}" aria-current="page" href="/usuarios/criar">Criar Usuários</a></li>
-                      <li class="nav-item"><a class="nav-link {{ request()->routeIs('posts.index') ? 'active' : '' }}" aria-current="page" href="/posts">Todos os posts</a></li>
-                      <li class="nav-item"><a class="nav-link {{ request()->routeIs('teams.index') ? 'active' : '' }}" aria-current="page" href="/times">Todos os Times</a></li>
+                      <li class="nav-item"><a class="nav-link {{ request()->routeIs('users.index') ? 'active' : '' }}" aria-current="page" href="{{route('users.index')}}">Home</a></li>
+                      <li class="nav-item"><a class="nav-link {{ request()->routeIs('users.create') ? 'active' : '' }}" aria-current="page" href="{{route('users.create')}}">Criar Usuários</a></li>
+                      <li class="nav-item"><a class="nav-link {{ request()->routeIs('posts.index') ? 'active' : '' }}" aria-current="page" href="{{route('posts.index')}}">Todos os posts</a></li>
+                      <li class="nav-item"><a class="nav-link {{ request()->routeIs('teams.index') ? 'active' : '' }}" aria-current="page" href="{{route('teams.index')}}">Todos os Times</a></li>
                   </ul>
               </div>
           </div>
