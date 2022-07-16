@@ -32,4 +32,4 @@ Route::controller(PostController::class)->group(function () {
     Route::get('/posts/{userId}', 'showOne')->name('posts.showOne');
 });
 
-Route::get('/times', [TeamController::class, 'index']);
+Route::get('/times', [TeamController::class, 'index'])->name('teams.index');
