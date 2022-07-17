@@ -37,6 +37,9 @@ class UserController extends Controller
         // all user posts 
         $user->load('posts');
 
+        // remove all user posts
+        // $user->posts()->delete();
+
         return view('users.show', compact('user'));
     }
 
