@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>@yield('title')</title>
   <!-- Bootstrap CSS only -->
+  <link href="{{ asset('') }}bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   @section('navbar')
@@ -32,7 +33,9 @@
   @show
 
   @yield('body')
-  
+  {{-- Bootstap js --}}
+  <script type="text/javascript" src="{{ asset('') }}bootstrap/js/bootstrap.min.js"></script>
+
   {{-- @stack('scripts') --}}
   {{-- 
   Carrega scripts com na pagina
