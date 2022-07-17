@@ -8,6 +8,8 @@
   <title>@yield('title')</title>
   <!-- Bootstrap CSS only -->
   <link href="{{ asset('') }}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  {{-- Laravel mix --}}
+  <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -37,6 +39,9 @@
   @yield('body')
   {{-- Bootstap js --}}
   <script type="text/javascript" src="{{ asset('') }}bootstrap/js/bootstrap.min.js"></script>
+
+  {{-- Laravel Mix --}}
+  <script type="text/javascript" src="{{mix('/js/app.js')}}"></script>
 
   {{-- @stack('scripts') --}}
   {{--
