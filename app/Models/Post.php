@@ -21,6 +21,10 @@ class Post extends Model
         'updated_at',
     ];
 
+    protected $with = [
+        'user'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
