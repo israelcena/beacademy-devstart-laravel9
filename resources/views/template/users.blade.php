@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,13 @@
   <!-- Bootstrap CSS only -->
   <link href="{{ asset('') }}bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
   @section('navbar')
-  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <nav class="navbar navbar-expand-sm navbar-light p-2 bg-info bg-opacity-25">
     <div class="container">
       <a class="navbar-brand" href="{{route('users.index')}}">Cadastro de Usuário</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID" aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarID" aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarID">
@@ -37,7 +39,7 @@
   <script type="text/javascript" src="{{ asset('') }}bootstrap/js/bootstrap.min.js"></script>
 
   {{-- @stack('scripts') --}}
-  {{-- 
+  {{--
   Carrega scripts com na pagina
     
   @push('scripts')
@@ -50,4 +52,5 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>  
   @endprepend --}}
 </body>
+
 </html>
