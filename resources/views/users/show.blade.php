@@ -1,5 +1,9 @@
 @extends('template.users')
 @section('title', "Usuário {$user->name}")
+
+@section('navbar')
+@endsection
+
 @section('body')
   <div class="container justify-center">
     <h1 class="mt-4">Central do Usuário</h1>
@@ -27,3 +31,4 @@
     </form>
   </div>
   @endsection
+  
