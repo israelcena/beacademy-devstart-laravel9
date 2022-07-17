@@ -84,6 +84,8 @@ class UserController extends Controller
             $data['password'] = bcrypt($req->password);
         }
         $user->update($data);
+
+        // $this->model->fill($data)->save();
         return redirect()->route('users.show', $user->id);
     }
 
