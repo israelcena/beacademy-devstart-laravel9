@@ -65,7 +65,9 @@ class UserController extends Controller
         }
         $this->model->create($data);
 
-        return redirect()->route('users.index');
+        $req->session()->flash('create', 'Usuário cadastrado com sucesso');
+
+        return redirect()->route('users.index')->with('create', 'usuário cadastrado po!');
     }
 
     public function edit($userEditId)
