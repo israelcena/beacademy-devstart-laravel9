@@ -33,9 +33,8 @@ class UserController extends Controller
         // if (!$user) {
         //     return view('users.notFoundUser');
         // }
-        if (!$user) {
-            throw new UserControllerException('Esse usuário não existe!');
-        }
+
+        $user ?? throw new UserControllerException('Esse usuário não existe!');
 
         // all user teams 
         $user->load('teams');
@@ -78,9 +77,8 @@ class UserController extends Controller
     public function edit($userEditId)
     {
         $user = $this->model->find($userEditId);
-        if (!$user) {
-            throw new UserControllerException('Não é permitido editar um usuário que não existe!');
-        }
+        $user ?? throw new UserControllerException('Não é permitido editar um usuário que não existe!');
+
         return view('users.edit', compact('user'));
     }
 
@@ -104,9 +102,8 @@ class UserController extends Controller
     public function destroy($id): string
     {
         $user = $this->model->find($id);
-        if (!$user) {
-            return redirect()->route('users.index');
-        }
+        $user ?? throw new UserControllerException("Não é possível excluir um usuário que não existe.");
+
         $user->delete();
         return redirect()->route('users.index');
     }
