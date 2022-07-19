@@ -79,7 +79,7 @@ class UserController extends Controller
     {
         $user = $this->model->find($userEditId);
         if (!$user) {
-            return redirect()->route('users.index');
+            throw new UserControllerException('Não é permitido editar um usuário que não existe!');
         }
         return view('users.edit', compact('user'));
     }
