@@ -65,7 +65,7 @@ class UserController extends Controller
         }
         $this->model->create($data);
 
-        $req->session()->flash('create', 'Usuário cadastrado com sucesso');
+        // $req->session()->flash('create', 'Usuário cadastrado com sucesso');
 
         return redirect()->route('users.index')->with('create', 'usuário cadastrado po!');
     }
