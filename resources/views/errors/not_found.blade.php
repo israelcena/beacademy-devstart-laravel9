@@ -1,5 +1,5 @@
 @extends('template.users')
-@section('title', 'Página não encontrada!')
+@section("title", "$msg")
 @section('body')
 <div class="container text-center my-4">
 <h1 class="mt-4">Não encontrado!</h1>
