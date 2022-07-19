@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\UserControllerException;
 use App\Models\User;
 use App\Http\Requests\UserForm;
 use Illuminate\Http\Request;
@@ -23,15 +24,19 @@ class UserController extends Controller
 
     public function show(int $id)
     {
-        $user = User::findOrFail($id);
+        $user = User::find($id);
         //         Modos de retornar apenas um usuário
         //         return User::where('id', $id)->first();
         //         return User::findOrFail($id); // retorna ou falha
         //         return User::find($id);
 
+        // if (!$user) {
+        //     return view('users.notFoundUser');
+        // }
         if (!$user) {
-            return view('users.notFoundUser');
+            throw new UserControllerException('Esse usuário não existe!');
         }
+
         // all user teams 
         $user->load('teams');
         // all user posts 
