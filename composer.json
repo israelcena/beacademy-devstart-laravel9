@@ -40,7 +40,7 @@
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
-            "cp -R vendor/twbs/bootstrap/dist public/bootstrap"
+            "cp -R vendor/twbs/bootstrap/dist storage/app/public/bootstrap"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""

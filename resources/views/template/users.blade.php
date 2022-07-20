@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>@yield("title")</title>
   <!-- Bootstrap CSS only -->
-  <link href="{{ asset('') }}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ asset('') }}storage/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   {{-- Laravel mix --}}
   <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
@@ -38,7 +38,7 @@
 
   @yield('body')
   {{-- Bootstap js --}}
-  <script type="text/javascript" src="{{ asset('') }}bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{{ asset('') }}storage/bootstrap/js/bootstrap.min.js"></script>
 
   {{-- Laravel Mix --}}
   <script type="text/javascript" src="{{mix('/js/app.js')}}"></script>
