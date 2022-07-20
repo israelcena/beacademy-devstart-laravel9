@@ -77,17 +77,15 @@ class UserController extends Controller
     public function edit($userEditId)
     {
         $user = $this->model->find($userEditId);
-        $user ?? throw new UserControllerException('Não é permitido editar um usuário que não existe!');
 
+        $user ?? throw new UserControllerException('Não é permitido editar um usuário que não existe!');
         return view('users.edit', compact('user'));
     }
 
     public function update(UserForm $req, $id)
     {
         $user = $this->model->find($id);
-        if (!$user) {
-            return redirect()->route('users.index');
-        }
+        $user ?? throw new UserControllerException("Não é possível Atualizar esse usuário");
 
         $data = $req->only('name', 'email');
         if ($req->password) {
@@ -102,8 +100,8 @@ class UserController extends Controller
     public function destroy($id): string
     {
         $user = $this->model->find($id);
-        $user ?? throw new UserControllerException("Não é possível excluir um usuário que não existe.");
 
+        $user ?? throw new UserControllerException("Não é possível excluir um usuário que não existe.");
         $user->delete();
         return redirect()->route('users.index');
     }
