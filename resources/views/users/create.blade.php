@@ -16,15 +16,17 @@
   <div class="col-md-12">
     <label for="name" class="form-label">Nome</label>
     <input type="text" class="form-control" id="name" name="name" placeholder="Mark">
-    <div class="valid-feedback">
-      Looks good!
-    </div>
+    @error('name')
+      {{ $message }}
+    @enderror
   </div>
   <div class="col-md-12">
     <label for="password" class="form-label">Senha</label>
     <input type="password" class="form-control" id="password" name="password">
     <div class="valid-feedback">
-      Looks good!
+      @error('password')
+          {{ $message }}
+      @enderror
     </div>
   </div>
   <div class="col-md-12">
