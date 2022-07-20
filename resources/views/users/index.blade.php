@@ -4,7 +4,7 @@
 <div class="container">
   <h1 class="mt-4">Listagem de Usuários</h1>
     @if(session()->has('create'))
-  <div>Parabens!, {{ session()->get('create'); }} </div>
+  <div>{{ session()->get('create'); }}</div>
   @endif
   <table class="table table-striped mt-4">
     <thead class="table-dark">
