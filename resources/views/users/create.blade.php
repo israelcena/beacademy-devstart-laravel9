@@ -15,7 +15,7 @@
   @csrf
   <div class="col-md-12">
     <label for="name" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="Mark">
+    <input type="text" class="form-control" id="name" name="name" placeholder="Mark" value="{{ old('name') }}">
     @error('name')
       {{ $message }}
     @enderror
@@ -32,7 +32,7 @@
   <div class="col-md-12">
     <label for="email" class="form-label">E-mail</label>
     <div class="input-group">
-      <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com.br" aria-describedby="email">
+      <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com.br" aria-describedby="email" value="{{ old('email') }}">
       <div class="invalid-feedback">
        Por Favor coloque um email válido.
       </div>
@@ -41,7 +41,7 @@
   <div class="col-md-12">
     <label for="image" class="form-label">Foto: </label>
     <div class="input-group">
-      <input type="file" class="form-control" id="image" name="image" aria-describedby="photo">
+      <input type="file" class="form-control" id="image" name="image" aria-describedby="photo" value="{{ old('image') }}">
     </div>
   </div>
   <div class="col-12">
